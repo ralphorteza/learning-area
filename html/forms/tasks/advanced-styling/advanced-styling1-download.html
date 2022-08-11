@@ -23,13 +23,45 @@
         font-size: 100%;
         padding: 0; margin: 0;
       }
+
+      input {
+        appearance: none;
+      }
+
+
+      input[type="search"] {
+        appearance: none;
+        outline: none;
+
+        border: 1px solid gray;
+        background: none;
+      }
+
+      input[type="search"]:focus{
+        outline: auto;
+      }
+
+      input[type="search"]:hover {
+        outline: auto;
+      }
+
+      .magnifying {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      /* input[type="search"]:not(:focus, :active)::-webkit-search-cancel-button { display: none; } */
+      input[type="search"]::-webkit-search-decoration,
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-results-button,
+      input[type="search"]::-webkit-search-results-decoration { display: none; }
+
     </style>
   </head>
 
   <body>
     <form>
       <input type="search" name="search" id="search" aria-label="Search our site">
-      <div></div>
+      <div class="magnifying"><img src="search-24px.png" alt="magniftying glass"></div>
     </form>
   </body>
 
