@@ -24,41 +24,49 @@
         padding: 0; margin: 0;
       }
 
-
-      input[type="radio"] {
+      input {
         appearance: none;
-
-      }
-      input[type="radio"] {
-        vertical-align: middle;
-        position: relative;
-        border:  1px solid gray;
-        border-radius: 24%;
-        width: 1em;
-        height: 1em;
-        /* background-color: #bfb; */
-        color: black;
       }
 
-      input[type="radio"]:checked {
-        background-color:black;
-    border-color: #4c4;
-        position: absolute;
-        font-size: 1.2em;
-        right: -1px;
-        top: -0.3em;
-      /*   visibility: hidden; */
-      }
 
- /*      input[type="radio"]:checked::before {
-        visibility: visible;
+/*       input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 2px solid gray;
+        vertical-align: -2px;
+        outline: none;
       } */
 
-      input[type="radio"]:disabled {
-        border-color: black;
-        background: #ddd;
-        color: gray;
+      input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 2px solid gray;
+        vertical-align: middle;
+        outline: none;
       }
+
+
+
+      input[type="radio"]::before {
+        display: block;
+        content: " ";
+        width: 10px;
+        height: 10px;
+        border-radius: 6px;
+        background-color: red;
+        font-size: 1.2em;
+        transform: translate(3px, 3px) scale(0);
+        transform-origin: center;
+        transition: all 0.3s ease-in;
+      }
+
+      input[type="radio"]:checked::before {
+        transform: translate(3px, 3px) scale(1);
+        transition: all 0.3s cubic-beizer(0.25, 0.25, 0.56, 2);
+      }
+
     </style>
   </head>
 
