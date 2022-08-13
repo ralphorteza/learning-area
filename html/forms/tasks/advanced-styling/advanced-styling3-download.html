@@ -66,6 +66,51 @@
         width: 60%;
         margin: 0 auto;
       }
+
+      input:active {
+        background-color: #eee;
+      }
+
+      input:required {
+        border: 1px solid black;
+      }
+
+      input:optional {
+        border: 1px solid silver;
+      }
+
+      input + span {
+        position: relative;
+      }
+
+      input:invalid + span::after {
+        font-size: 0.7rem;
+        position: absolute;
+        content: "required";
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        top: -54px;
+        left: 15rem;
+      }
+
+      input:invalid + span::before {
+        content: '✖';
+        color: red;
+      }
+
+      input:valid + span::before {
+        content: '✓';
+        color: green;
+      }
+
+      input:invalid {
+        border: 2px solid red;
+      }
+
+    
+
+
     </style>
   </head>
 
@@ -76,12 +121,12 @@
 
         <p>Required fields are labelled with "required".</p>
         <div>
-          <label for="fname">First name: </label>
+          <label for="fname">First name: *</label>
           <input id="fname" name="fname" type="text" required>
           <span></span>
         </div>
         <div>
-          <label for="lname">Last name: </label>
+          <label for="lname">Last name: *</label>
           <input id="lname" name="lname" type="text" required>
           <span></span>
         </div>
